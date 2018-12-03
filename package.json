@@ -1,0 +1,15 @@
+{
+  "name": "platformer",
+  "version": "1.0.0",
+  "description": "Game for web technology project",
+  "main": "index.js",
+  "dependencies": {
+    "serve": "^10.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mikhail Sergeenkov",
+  "license": "ISC"
+}
