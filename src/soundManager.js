@@ -1,11 +1,16 @@
 class SoundManager {
 
     constructor() {
+        this.gainNode = null;
+        this.clips = {};
+        this.context = null;
+        this.loaded = false;
+    }
+
+    init() {
         this.context = new AudioContext();
         this.gainNode = this.context.createGain ? this.context.createGain() : this.context.createGainNode();
         this.gainNode.connect(this.context.destination);
-        this.clips = {};
-        this.loaded = false;
     }
 
     load(path, callback) {

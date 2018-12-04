@@ -139,7 +139,7 @@ class MapManager {
                     for (let i = 0; i < entities.objects.length; i++) {
                         let e = entities.objects[i];
                         try {
-                            let obj = Object.create(gameManager.factory[e.type]);
+                            let obj = new gameManager.factory[e.type] ();
                             obj.name = e.name;
                             obj.pos_x = e.x;
                             obj.pos_y = e.y;

@@ -2,6 +2,9 @@ class EventManager {
     constructor() {
         this.bind = [];
         this.action = [];
+    }
+
+    setup() {
         this.bind[65] = 'left';
         this.bind[68] = 'right';
         this.bind[87] = 'up';
