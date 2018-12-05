@@ -23,6 +23,7 @@ class SoundManager {
             this.play(clip.path, {looping: loop ? loop : false, volume: volume ? volume : 1});
         };
         this.clips[path] = clip;
+
         const request = new XMLHttpRequest();
         request.open('GET', path, true);
         request.responseType = 'arraybuffer';

@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: #76e805;
+}
+
+h1 {
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+#canvasId {
+    display: block;
+    margin: 0 auto;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 15px solid #1150e9;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+#result {
+    position: fixed;
+    text-align: center;
+    top: 40vh;
+    left: 35vw;
+    padding: 20px;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 7px solid #1150e9;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+#hBody {
+
+    color: #343434;
+}
+
+#aResult {
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    color:  #1150e9;
+    padding: 7px;
+    margin-top: 10px;
+    background-color: #76e805;
+    border: 7px solid #1150e9;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+#aResult:active {
+    color: #76e805;
+    background:  #1150e9;
+}
+
+#coins {
+    padding: 7px;
+    position: absolute;
+    top: 30px;
+    left: 10%;
+    font-size: 30px;
+    color: #000000;
+    font-weight: bolder;
+    width: 20vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 7px solid #1150e9;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+#start {
+    margin-top: 20px;
+    padding: 3px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 2em;
+    width: 10vw;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    padding-top: 200px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Modal Content */
+.modal-content {
+    text-align: center;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 50vw;
+    height: 30vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 7px solid #1150e9;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+input {
+    padding: 5px;
+    width: 30vw;
+    height: 10vh;
+    font-size: 3em;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+    outline: 0;
+    color: #1150e9;
+    border: 7px solid #1150e9;
+    border-radius: 15px;
+}
+
+a.button {
+    width: 80px;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    outline: none;
+    margin-left: 6px;
+    transition: 0.2s;
+    top: 50%;
+    right: 0;
+    background-color: #76e805;
+    border: 7px solid #1150e9;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+}
+
+a.button:hover {
+    background: #76e805;
+    color: #1150e9;
+}
+
+a.button:active {
+    background: white;
+}
+
+#scoretable {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+}
+
+thead {
+    background: #1150e9;
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: #D2E0E6;
+    border-radius: 15px;
+}
+
+th {
+    padding: 10px 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 15px;
+    background: #ebffe9;
+}
+
+h1 {
+    border-bottom: 1px solid black;
+    margin: 0px;
+}
+
+tr {
+    border: 7px solid #1150e9;
+    border-radius: 15px;
+}
+
+td {
+    border-bottom: 1px solid black;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bolder;
+    font-size: 1.3em;
+}

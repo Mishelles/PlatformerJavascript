@@ -17,7 +17,7 @@ const setItem = (item, val) => {
 
 const updateWorld = () => {
     now = timestamp();
-    dt = dt + Math.min(1, (now - last) / 1000);
+    dt = dt + Math.min(1, (now - last) / 900);
     while (dt > step) {
         dt = dt - step;
         gameManager.update();

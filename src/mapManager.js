@@ -1,3 +1,6 @@
+const INITIAL_WIDTH = 1700;
+const INITIAL_HEIGHT = 850;
+
 class MapManager {
     constructor() {
         this.mapData = null;
@@ -10,23 +13,23 @@ class MapManager {
         this.imgLoadCount = 0;
         this.imgLoaded = false;
         this.jsonLoaded = false;
-        this.view = {x: 0, y: 0, w: 1280, h: 640}
+        this.view = {x: 0, y: 0, w: INITIAL_WIDTH, h: INITIAL_WIDTH}
     }
 
     loadMap(path) {
         const request = new XMLHttpRequest();
         request.overrideMimeType("application/json");
         request.open("GET", path, true);
-        request.onreadystatechange = () => {
-            if (request.readyState === 4 && request.status === 200) {
-                this.parseMap(request.responseText);
+        request.onreadystatechange = function() {
+            if(request.readyState === 4 && request.status === 200) {
+                mapManager.parseMap(request.responseText);
             }
         };
         request.send();
     }
 
     draw(ctx) {
-        ctx.clearRect(0, 0, 1280, 640);
+        ctx.clearRect(0, 0, INITIAL_WIDTH, INITIAL_HEIGHT);
         if (!this.imgLoaded || !this.jsonLoaded) {
             setTimeout(() => {
                 this.draw(ctx);
@@ -139,7 +142,7 @@ class MapManager {
                     for (let i = 0; i < entities.objects.length; i++) {
                         let e = entities.objects[i];
                         try {
-                            let obj = new gameManager.factory[e.type] ();
+                            let obj = new gameManager.factory[e.type]();
                             obj.name = e.name;
                             obj.pos_x = e.x;
                             obj.pos_y = e.y;

@@ -39,15 +39,14 @@ class Player extends Entity {
 
     onTouchEntity(obj) {
         if (obj.name.match(/coins[\d*]/)) {
-            soundManager.play("/mus/aud1.mp3", {looping: 0, volume: 0.5});
+            soundManager.play("/mus/aud1.wav", {looping: 0, volume: 0.5});
             this.countCoins += 1;
             let elem = document.getElementById('pCoins');
             elem.innerHTML = this.countCoins;
             obj.kill();
 
         }
-        if (obj.name.match(/kosm/)) {
-            console.log('lel');
+        if (obj.name.match(/kosm/)) {;
             soundManager.stopAll();
             soundManager.init();
             soundManager.play("/mus/aud2.mp3", {looping: 0, volume: 1});
@@ -71,8 +70,12 @@ class Player extends Entity {
         gameManager.kill(this);
         if (!this.win) {
             gameManager.kill(this, false);
-            elem.innerHTML = 'Игра окончена!';
-            elem1.innerHTML = 'Начать заново';
+            soundManager.stopAll();
+            soundManager.init();
+            soundManager.play("/mus/aud3.mp3", {looping: 0, volume: 0.5});
+            elem.innerHTML = 'Уууупс, игра окончена, дорогой друг!';
+            elem1.innerHTML = 'Хочу играть заново!';
+            result.style.display = 'block';
         } else {
             gameManager.kill(this, true, this.countCoins);
         }

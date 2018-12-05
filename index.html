@@ -1,133 +1,45 @@
-<!DOCTYPE html>
-<html>
-   <head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-		<title>The Game</title>
-		
-		<style>
-			#canvasId{
-				display: block;
-				margin: 0 auto;
-				background-image:url(fon.jpg);
-			}
-			
-			#result {
-				position: fixed;
-				top: 40%;
-				left: 40%;
-				text-align: center;
-			}
-			#hBody {
-				font-size: 40px;
-				color: darkblue;
-			}
-			#aResult {
-				font-size: 30px;
-				text-align: center;
-				text-decoration: none;
-				color: darkblue;
-				background-color: rgba(255, 255, 255, 0.61);
-				border-radius: 30px;
-			}
-			#aResult : active {
-				color: darkblue;
-			}
-			#coins {
-				position: absolute;
-				top: 30px;
-				left: 10%;
-				font-size: 30px;
-				color: white;
-			}
-		
-			.modal {
-				display: block;
-				position: fixed; /* Stay in place */
-				z-index: 1; /* Sit on top */
-				padding-top: 200px; /* Location of the box */
-				left: 0;
-				top: 0;
-				width: 100%; /* Full width */
-				height: 100%; /* Full height */
-				overflow: auto; /* Enable scroll if needed */
-				background-color: rgb(0,0,0); /* Fallback color */
-				background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
-			}
+<!-- Michael Sergeenkov © 2018 -->
 
-			/* Modal Content */
-			.modal-content {
-				background-color: #fefefe;
-				margin: auto;
-				padding: 20px;
-				border: 1px solid #888;
-				width: 30%;
-				border-radius: 5px;
-			}
-			
-			input{
-			  width: 380px;
-			  height: 25px;
-			  border-radius: 3px;
-			  border: 1px solid transparent;
-			  border-top: none;
-			  border-bottom: 1px solid #DDD;
-			  box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
-			  outline: 0;
-			}
-		
-			a.button {
-			  width: 80px;
-			  cursor: pointer;
-			  display: inline-block;
-			  color: black;
-			  font-weight: 700;
-			  text-decoration: none;
-			  text-align: center;
-			  outline: none;
-			  margin-left: 6px;
-			  border: 2px solid;
-			  border-radius: 4px;
-			  transition: 0.2s;
-			  top: 50%;
-			  right: 0;
-			} 
-			a.button:hover { background: rgba(255,255,255,.2); }
-			a.button:active { background: white; }
-			
-			#scoreboard		{ width:  50%; margin: 0 auto; text-align: center;}
-			table			{ width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 16px;  text-align: center}
-			h1				{ border-bottom: 1px solid black; margin: 0px;}
-			td				{ border-bottom: 1px solid black; padding: 5px;}
-		</style>
+<html lang="ru">
+   <head>
+       <meta charset="utf-8">
+		<title>Супер-мега-платформер (нет)</title>
+       <link rel="stylesheet" href="style.css">
    </head>
     <body>
-	<div id="myModal" class="modal">	
+	<div id="myModal" class="modal">
 		<div class="modal-content">
-			<input type="text" name="nickname" placeholder="Nickname" id="nick" size="20"/><a onclick="gameManager.play()" class="button" id="start">OK</a>
+            <h2>Добро пожаловать в Супер-мега-платформер!</h2>
+            <h3>Вводи имя и начинай играть!</h3>
+			<input type="text" name="nickname" placeholder="Как тебя зовут?" id="nick" size="20"/>
+            <br>
+            <a onclick="gameManager.play()" class="button" id="start">Играть</a>
 		</div>
 	</div>
-	
-    <canvas id="canvasId" width="1280" height="640"></canvas>
-	
+
+    <canvas id="canvasId" width="1700" height="850"></canvas>
+
     <div id="coins">
-        <b id="pCoins"></b><br><b id="total"></b>
+        <p>Набрано биткоинов: <b id="pCoins"></b></p>
+        <p>Ваш уровень, сэр: <b id="total"></b></p>
     </div>
     <div id="result">
-        <h1 id="hBody"></h1>
+        <h2 id="hBody"></h2>
         <a id="aResult" href="/index.html"></a>
     </div>
-	
-	<div id="scoreboard">
-		<h1>Scoreboard</h1>
+
+	<div id="scoretable">
+		<h2>Рекордсмены Супер-мега-платформера</h2>
+        <h3>Ты можешь быть в их числе!</h3>
 		<table>
 			<colgroup>
 				<col width="30%">
 				<col width="40%">
 				<col width="30%">
 			</colgroup>
-			<thead style="background: gray; color: black; font-weight: bolder;">
+			<thead>
 				<tr>
-					<th>Date</th><th>Nickname</th><th>Coins</th>
+					<th>Время</th><th>Имя</th><th>Количество биткоинов</th>
 				</tr>
 			</thead>
 			<tbody id="records"></tbody>
@@ -140,8 +52,9 @@
 	<script src="src/physicManager.js"></script>
 	<script src="src/soundManager.js"></script>
 	<script src="src/eventManager.js"></script>
+    <script src="src/scoreTable.js"></script>
 	<script src="src/entities.js"></script>
 	<script src="src/utils.js"></script>
-    <script src="script.js"></script>
+    <script src="index.js"></script>
     </body>
 </html>

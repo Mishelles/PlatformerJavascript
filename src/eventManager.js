@@ -5,9 +5,9 @@ class EventManager {
     }
 
     setup() {
-        this.bind[65] = 'left';
-        this.bind[68] = 'right';
-        this.bind[87] = 'up';
+        this.bind[37] = 'left';
+        this.bind[39] = 'right';
+        this.bind[38] = 'up';
         document.body.addEventListener("keydown", this.onKeyDown);
         document.body.addEventListener("keyup", this.onKeyUp);
     }
